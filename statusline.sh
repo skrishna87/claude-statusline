@@ -182,17 +182,17 @@ CTX_DOTS=$(build_dots "$CTX_PCT")
 printf "${DIM}current${RESET} %s ${BOLD}%s%%${RESET} ${DIM}↻${RESET} %s\n" \
   "$CTX_DOTS" "$CTX_PCT" "$DURATION_STR"
 
-# Line 3: weekly usage — cost dots + reset time
-WEEKLY_DOTS=$(build_dots "$WEEKLY_PCT")
-COST_FMT=$(printf '$%.2f' "$WEEKLY_COST")
-printf "${DIM}weekly ${RESET} %s ${BOLD}%s%%${RESET} ${DIM}↻${RESET} %s ${DIM}(%s/%s)${RESET}\n" \
-  "$WEEKLY_DOTS" "$WEEKLY_PCT" "$NEXT_FRIDAY" "$COST_FMT" "$(printf '$%.0f' "$WEEKLY_BUDGET")"
+# Line 3 (disabled): weekly usage — cost dots + reset time
+# WEEKLY_DOTS=$(build_dots "$WEEKLY_PCT")
+# COST_FMT=$(printf '$%.2f' "$WEEKLY_COST")
+# printf "${DIM}weekly ${RESET} %s ${BOLD}%s%%${RESET} ${DIM}↻${RESET} %s ${DIM}(%s/%s)${RESET}\n" \
+#   "$WEEKLY_DOTS" "$WEEKLY_PCT" "$NEXT_FRIDAY" "$COST_FMT" "$(printf '$%.0f' "$WEEKLY_BUDGET")"
 
-# Line 4: Vim mode indicator (only if vim mode is enabled)
-if [ -n "$VIM_MODE" ]; then
-  if [ "$VIM_MODE" = "INSERT" ]; then
-    printf "${BOLD}${GREEN}-- INSERT --${RESET}\n"
-  else
-    printf "${DIM}-- NORMAL --${RESET}\n"
-  fi
-fi
+# Line 4 (disabled): Vim mode indicator (only if vim mode is enabled)
+# if [ -n "$VIM_MODE" ]; then
+#   if [ "$VIM_MODE" = "INSERT" ]; then
+#     printf "${BOLD}${GREEN}-- INSERT --${RESET}\n"
+#   else
+#     printf "${DIM}-- NORMAL --${RESET}\n"
+#   fi
+# fi
